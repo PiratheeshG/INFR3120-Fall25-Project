@@ -25,7 +25,42 @@ router.get('/',async(req,res,next)=>{
     catch(err)
     {
         console.error(err);
+        res.render('Meals/list',{
+            error:'error on server'
+
+        })
     }
 })
+// get route for add page -- create op
+router.get('/add',async(req,res,next)=>{
+    try{
+        res.render('Meals/add',{
+            title:'Add Meal'
+        })
+    }
+    catch(err)
+    {
+        console.error(err);
+        res.render('Meals/list',{
+            error:'error on server'
 
+        })
+    }
+})
+// post route for processing add page --create op
+router.post('/add',async(req,res,next)=>{
+    
+})
+// get route for edit page -- update op
+router.get('/edit/:id',async(req,res,next)=>{
+    
+})
+// post route for processing edit page --update op
+router.post('/edit/:id',async(req,res,next)=>{
+    
+})
+// get route for deleting items -- delete op
+router.get('/delete/:id',async(req,res,next)=>{
+    
+})
 module.exports = router;
