@@ -15,7 +15,7 @@ router.get('/',async(req,res,next)=>{
     {
         const MealList = await Meal.find();
         //console.log(MealList);
-        res.render('meal',{
+        res.render('Meals/list',{
             title: 'Meals',
             MealList:MealList
 

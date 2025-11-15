@@ -1,0 +1,35 @@
+<%- include ../partials/header.ejs %>
+<%- include ../partials/main_nav.ejs %>
+<!--main content for displaying my db-->
+<main class="container">
+    <div class="row">
+        <div class="offset-md-1 col-md-12">
+            <h1><%= title %></h1>
+            <br>
+            <table class="table table-bordered table-striped table-hover">
+                <!--header row-->
+                <tr class="d-flex">
+                    <th class="text-center col-2">Date</th>
+                    <th class="text-center col-2">Food Item</th>
+                    <th class="text-center col-2">Time of Consumption</th>
+                    <th class="text-center col-1">Calorie Amount</th>
+                    <th class="text-center col-1">Weight of Food</th>
+                    <th class="col-4">Notes</th>
+                </tr>
+                <!--for/while loop-->
+                <% for(let count=0; count<MealList.length;count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-2"><%= MealList[count].date %></td>
+                        <td class="text-center col-2"><%= MealList[count].foodItem %></td>
+                        <td class="text-center col-2"><%= MealList[count].consumptionTime %></td>
+                        <td class="text-center col-1"><%= MealList[count].calorieAmount %></td>
+                        <td class="text-center col-1"><%= MealList[count].weightOfFood %></td>
+                        <td class="col-4"><%= MealList[count].notes %></td>
+                    </tr>
+                <% } %>
+            </table>
+
+        </div>
+    </div>
+</main>
+<%- include ../partials/footer.ejs %>

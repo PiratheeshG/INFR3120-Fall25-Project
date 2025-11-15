@@ -35,6 +35,17 @@
           <i class="fa-solid fa-laptop"></i>Projects</a>
         </li>
 
+        
+        
+        <li class="nav-item">
+        <% if (title == "Meals") { %>
+          <a class="nav-link active" href="/meals">
+        <% } else { %>
+          <a class="nav-link" href="/meals">
+        <% } %>
+          <i class="fa-solid fa-apple-whole"></i>Meals</a>
+        </li>
+
         <li class="nav-item">
         <% if (title == "Contact Me") { %>
           <a class="nav-link active" href="/contact">
