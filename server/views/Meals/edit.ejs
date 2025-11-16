@@ -12,42 +12,54 @@
                     <input type="text" class="form-control"
                     id="dateTextField"
                     placeholder="Enter the date"
-                    name="date" required>
+                    name="date"
+                    value="<%= Meal.date%>"
+                    required>
                 </div>
                 <div class="form-group">
                     <label for="foodItemTextField">Food Item</label>
                     <input type="text" class="form-control"
                     id="foodItemTextField"
                     placeholder="Enter the name of the food item/meal eaten"
-                    name="foodItem" required>
+                    name="foodItem"
+                    value="<%= Meal.foodItem%>"
+                    required>
                 </div>
                 <div class="form-group">
                     <label for="consumptionTimeTextField">Time of Consumption</label>
                     <input type="text" class="form-control"
                     id="consumptionTimeTextField"
                     placeholder="Enter the time in which you consumed the food item/your meal"
-                    name="consumptionTime" required>
+                    name="consumptionTime"
+                    value="<%= Meal.consumptionTime%>"
+                    required>
                 </div>
                 <div class="form-group">
                     <label for="calorieAmountTextField">Calorie Amount</label>
                     <input type="text" class="form-control"
                     id="calorieAmountTextField"
                     placeholder="Enter the amount of calories in the food item/your meal"
-                    name="calorieAmount" required>
+                    name="calorieAmount" 
+                    value="<%= Meal.calorieAmount%>"
+                    required>
                 </div>
                 <div class="form-group">
                     <label for="weightOfFoodTextField">Weight of Food</label>
                     <input type="text" class="form-control"
                     id="weightOfFoodTextField"
                     placeholder="Enter the weight of food item/your meal in grams"
-                    name="weightOfFood" required>
+                    name="weightOfFood" 
+                    value="<%= Meal.weightOfFood%>"
+                    required>
                 </div>
                 <div class="form-group">
                     <label for="notesTextField">Notes</label>
                     <input type="text" class="form-control"
                     id="notesTextField"
                     placeholder="Enter any additional notes"
-                    name="notes" required>
+                    name="notes" 
+                    value="<%= Meal.notes%>"
+                    required>
                 </div>
                 <br>
                 <button class="btn btn-primary" type="submit">

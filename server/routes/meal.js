@@ -98,10 +98,39 @@ router.get('/edit/:id',async(req,res,next)=>{
 })
 // post route for processing edit page --update op
 router.post('/edit/:id',async(req,res,next)=>{
-    
+    try{
+        let id = req.params.id;
+        let updateMeal = Meal({
+            "_id":id,
+            "date":req.body.date,
+            "foodItem":req.body.foodItem,
+            "consumptionTime":req.body.consumptionTime,
+            "calorieAmount":req.body.calorieAmount,
+            "weightOfFood":req.body.weightOfFood,
+            "notes":req.body.notes
+        })
+        Meal.findByIdAndUpdate(id, updateMeal).then(()=>{
+            res.redirect("/meals")
+        })
+    }
+    catch(err)
+    {
+        console.log (err);
+        next(err);
+    }
 })
 // get route for deleting items -- delete op
 router.get('/delete/:id',async(req,res,next)=>{
-    
+    try{
+        let id = req.params.id;
+        Meal.deleteOne({_id:id}).then(()=>{
+            res.redirect("/meals")
+        })
+    }
+    catch(err)
+    {
+        console.log (err);
+        next(err);
+    }
 })
 module.exports = router;
