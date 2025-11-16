@@ -1,5 +1,63 @@
 <%- include ../partials/header.ejs %>
 <%- include ../partials/main_nav.ejs %>
+<!--content for adding the meal-->
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h1><%= title %><h1></h1>
 
-
+            <form class="form" method="post">
+                <div class="form-group">
+                    <label for="dateTextField">Date</label>
+                    <input type="test" class="form-control"
+                    id="dateTextField"
+                    placeholder="Enter the date"
+                    date="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="foodItemTextField">Food Item</label>
+                    <input type="test" class="form-control"
+                    id="foodItemTextField"
+                    placeholder="Enter the name of the food item/meal eaten"
+                    foodItem="foodItem" required>
+                </div>
+                <div class="form-group">
+                    <label for="consumptionTimeTextField">Time of Consumption</label>
+                    <input type="test" class="form-control"
+                    id="consumptionTimeTextField"
+                    placeholder="Enter the time in which you consumed the food item/your meal"
+                    consumptionTime="consumptionTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="calorieAmountTextField">Calorie Amount</label>
+                    <input type="test" class="form-control"
+                    id="calorieAmountTextField"
+                    placeholder="Enter the amount of calories in the food item/your meal"
+                    calorieAmount="calorieAmount" required>
+                </div>
+                <div class="form-group">
+                    <label for="weightOfFoodTextField">Weight of Food</label>
+                    <input type="test" class="form-control"
+                    id="weightOfFoodTextField"
+                    placeholder="Enter the weight of food item/your meal in grams"
+                    weightOfFood="weightOfFood" required>
+                </div>
+                <div class="form-group">
+                    <label for="notesTextField">Notes</label>
+                    <input type="test" class="form-control"
+                    id="notesTextField"
+                    placeholder="Enter any additional notes"
+                    notes="notes" required>
+                </div>
+                <br>
+                <button class="btn btn-primary" type="submit">
+                    <i class="fas fa-edit"></i> Submit
+                </button>
+                <a href="/meals" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
 <%- include ../partials/footer.ejs %>

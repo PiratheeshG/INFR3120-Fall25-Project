@@ -35,13 +35,13 @@ router.get('/',async(req,res,next)=>{
 router.get('/add',async(req,res,next)=>{
     try{
         res.render('Meals/add',{
-            title:'Add Meal'
+            title:'Add a Meal'
         })
     }
     catch(err)
     {
         console.error(err);
-        res.render('Meals/list',{
+        res.render('Meals/add',{
             error:'error on server'
 
         })
@@ -49,7 +49,29 @@ router.get('/add',async(req,res,next)=>{
 })
 // post route for processing add page --create op
 router.post('/add',async(req,res,next)=>{
-    
+    try
+    {
+        let newMeal = Meal({
+            "date":req.body.date,
+            "foodItem":req.body.foodItem,
+            "consumptionTime":req.body.consumptionTime,
+            "calorieAmount":req.body.calorieAmount,
+            "weightOfFood":req.body.weightOfFood,
+            "notes":req.body.notes
+
+        });
+        Meal.create(newMeal).then(()=>{
+            res.redirect('/meals')
+        })
+    } 
+    catch(err)
+    {
+        console.error(err);
+        res.render('Meals/add',{
+            error:'error on server'
+
+        })
+    }   
 })
 // get route for edit page -- update op
 router.get('/edit/:id',async(req,res,next)=>{
