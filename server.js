@@ -89,5 +89,3 @@ function onListening() {
   debug('Listening on ' + bind);
 }
 
-//Adding Static Image
-app.use(express.static('public'));
