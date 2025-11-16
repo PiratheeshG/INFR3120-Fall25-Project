@@ -5,7 +5,9 @@
     <div class="row">
         <div class="offset-md-1 col-md-12">
             <h1><%= title %></h1>
-            <br>
+            <a href="/meals/add" class="btn btn-primary" role="button">
+                <i class="fas fa-plus-circle"></i> Add a Meal
+            </a>
             <table class="table table-bordered table-striped table-hover">
                 <!--header row-->
                 <tr class="d-flex">
@@ -25,6 +27,13 @@
                         <td class="text-center col-1"><%= MealList[count].calorieAmount %></td>
                         <td class="text-center col-1"><%= MealList[count].weightOfFood %></td>
                         <td class="col-4"><%= MealList[count].notes %></td>
+                        <td class="text-center col-1">
+                        <a href="/meals/edit/<%= MealList[count]._id%>"
+                            class="btn btn-primary btn-sm">Edit
+                        </a></td>
+                        <td class="text-center col-1">
+                        <a href="/meals/delete/<%= MealList[count]._id%>"
+                            class="btn btn-danger btn-sm">Delete</a></td>
                     </tr>
                 <% } %>
             </table>
