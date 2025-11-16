@@ -88,3 +88,6 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+//Adding Static Image
+app.use(express.static('public'));
