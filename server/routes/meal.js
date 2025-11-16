@@ -1,6 +1,9 @@
 let express = require('express')
 let router = express.Router();
 let mongoose = require('mongoose');
+
+// CRUD --> Read
+
 let Meal = require('../models/meal');
 
 // get --> extract and read smth
