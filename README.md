@@ -17,3 +17,5 @@ Extra Notes:
 - needed to deploy the database from the cloud cluster and therefore needed a way to hide my credentials using .env and .gitignore and this youtube video helped
 https://www.youtube.com/watch?v=b3ne4Mkadoc
 - I needed help formatting my uri under db.js and this source helped https://www.npmjs.com/package/dotenv
+- Canva logo:
+https://www.canva.com/design/DAG4cxTiX6w/6l7x4ZQ8FDwlEUCd5_L3rQ/edit 
