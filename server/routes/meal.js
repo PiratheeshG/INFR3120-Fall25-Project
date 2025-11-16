@@ -78,7 +78,23 @@ router.post('/add',async(req,res,next)=>{
 })
 // get route for edit page -- update op
 router.get('/edit/:id',async(req,res,next)=>{
-    
+    try
+    {
+        const id = req.params.id;
+        const mealToEdit = await Meal.findById(id);
+        res.render("Meals/edit",
+            {
+                title: 'Edit Meal', 
+                Meal: mealToEdit
+            }
+
+        )
+    }
+    catch(err)
+    {
+        console.log (err);
+        next(err);
+    }
 })
 // post route for processing edit page --update op
 router.post('/edit/:id',async(req,res,next)=>{
