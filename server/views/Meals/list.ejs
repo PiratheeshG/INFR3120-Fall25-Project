@@ -5,10 +5,13 @@
     <div class="row">
         <div class="offset-md-1 col-md-12">
             <h1><%= title %></h1>
-            <a href="/meals/add" class="btn btn-primary" role="button">
+            <% if(typeof displayName =='string' && displayName) { %>
+                <a href="/meals/add" class="btn btn-primary" role="button">
                 <i class="fas fa-plus-circle"></i> Add a Meal
             </a>
+            <% } %>
             <table class="table table-bordered table-striped table-hover">
+            <% if(typeof displayName =='string' && displayName) { %>
                 <!--header row-->
                 <tr class="d-flex">
                     <th class="text-center col-2">Date</th>
@@ -17,6 +20,8 @@
                     <th class="text-center col-1">Calorie Amount</th>
                     <th class="text-center col-1">Weight of Food</th>
                     <th class="col-4">Notes</th>
+                    <th class="text-center col-1"></th>
+                    <th class="text-center col-1"></th>
                 </tr>
                 <!--for/while loop-->
                 <% for(let count=0; count<MealList.length;count++) { %>
@@ -37,6 +42,28 @@
                             class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i>Delete</a></td>
                     </tr>
+                <% } %>
+                <% } else { %>
+                <!--header row-->
+                <tr class="d-flex">
+                    <th class="text-center col-2">Date</th>
+                    <th class="text-center col-2">Food Item</th>
+                    <th class="text-center col-2">Time of Consumption</th>
+                    <th class="text-center col-1">Calorie Amount</th>
+                    <th class="text-center col-1">Weight of Food</th>
+                    <th class="col-4">Notes</th>
+                </tr>
+                <!--for/while loop-->
+                <% for(let count=0; count<MealList.length;count++) { %>
+                    <tr class="d-flex">
+                        <td class="text-center col-2"><%= MealList[count].date %></td>
+                        <td class="text-center col-2"><%= MealList[count].foodItem %></td>
+                        <td class="text-center col-2"><%= MealList[count].consumptionTime %></td>
+                        <td class="text-center col-1"><%= MealList[count].calorieAmount %></td>
+                        <td class="text-center col-1"><%= MealList[count].weightOfFood %></td>
+                        <td class="col-4"><%= MealList[count].notes %></td>
+                    </tr>
+                <% } %>
                 <% } %>
             </table>
 
