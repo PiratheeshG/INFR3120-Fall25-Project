@@ -5,6 +5,15 @@ let mongoose = require('mongoose');
 // CRUD --> Read
 
 let Meal = require('../models/meal');
+function requireAuth(req,res,next)
+{
+    if(!req.isAuthenticated())
+    {
+        return res.redirect('/login')
+    }
+    next();
+}
+
 
 // get --> extract and read smth
 // post --> post smth
@@ -17,10 +26,11 @@ router.get('/',async(req,res,next)=>{
     try
     {
         const MealList = await Meal.find();
-        //console.log(MealList);
+        console.log(MealList);
         res.render('Meals/list',{
             title: 'Meals',
-            MealList:MealList
+            MealList:MealList,
+            displayName: req.user?req.user.displayName:""
 
         })
 
@@ -38,7 +48,8 @@ router.get('/',async(req,res,next)=>{
 router.get('/add',async(req,res,next)=>{
     try{
         res.render('Meals/add',{
-            title:'Add a Meal'
+            title:'Add a Meal',
+            displayName: req.user?req.user.displayName:""
         })
     }
     catch(err)
@@ -85,7 +96,8 @@ router.get('/edit/:id',async(req,res,next)=>{
         res.render("Meals/edit",
             {
                 title: 'Edit Meal', 
-                Meal: mealToEdit
+                Meal: mealToEdit,
+                displayName: req.user?req.user.displayName:""
             }
 
         )
