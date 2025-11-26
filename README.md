@@ -1,5 +1,7 @@
 My partner Ayesha and I made a website for those who want to track their daily calories during each meal time or any time they consume anything.
 
+For part 1 of this project:
+
 Here is a link to the website: https://infr3120-fall25-project-uyqu.onrender.com/meals here is a link to the repo for this assignment: https://github.com/PiratheeshG/INFR3120-Fall25-Project
 
 
@@ -9,6 +11,14 @@ The Home page was made using JavaScript and EJS provides navigation to the meals
 The meals page was made using JavaScript, EJS, and Express. It allows users to view their meal entries while providing options to create(add), read, update (edit), and delete entries.
 MongoDB was used to create the database to store each meal entry, each entry made on the website or on MongoDB itself has multiple text fields to fill out (date, foodItem, consumptionTime, calorieAmount, weightofFood, and date).
 
+For part 2 of this project:
+Here's links to our YouTube demo, the deployed webpage, and our repo for this project.
+
+Youtube: https://www.youtube.com/watch?v=byjP6i5FWM8
+Render: https://infr3120-fall25-project-part-2.onrender.com/
+GitHub: https://github.com/PiratheeshG/INFR3120-Fall25-Project
+
+The login.ejs and registration.ejs were created and connected the routes that authorize a user's credentials. The User.js was created with the help of mongoose and passport local mongoose, which hashes passwords and authenticates them. After logging in, the navbar updates to show Logout instead of Login, and the meal entries become visible after logging in.
    
 Extra Notes:
 -This assignment was developed using a full stack setup which included Express.js and Node.js for the backend or server side, MongoDB for data storage, and Bootstrap/Font Awesome for the styling and icons on the actual webpage.
