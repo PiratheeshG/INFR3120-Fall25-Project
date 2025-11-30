@@ -5,17 +5,24 @@
 
 
 
+<!--using bootstrap text-center to center everything to look pretty-->
+<div class="text-center">
   <h1>Welcome to <%= title %>, Your Daily Calorie Intake Tracker!</h1>
+  <h6>Click the 'Meals' button to view meal entries</h6>
+  <h6>Click the 'Login' button to make an account to start tracking your meal entries</h6>
 
-  <img src="/CalTrackerLogo.png" alt="Logo" style="width:500px">
 
 
+  <img src="/CalTrackerLogo.png" alt="Logo" style="width:300px">
+
+  <br>
 <!--Creates button for home page-->
-  <a href="/meals" class="btn btn-primary">
+  <a href="/meals" class="btn btn-info">
     <i class="fa-solid fa-drumstick-bite"></i> Meals
   </a>
-
-
+  <a href="/login" class="btn btn-info">
+    <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+  </a>
 
 
 

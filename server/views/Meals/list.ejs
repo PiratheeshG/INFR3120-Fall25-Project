@@ -6,11 +6,12 @@
         <div class="offset-md-1 col-md-12">
             <h1><%= title %></h1>
             <% if(typeof displayName =='string' && displayName) { %>
-                <a href="/meals/add" class="btn btn-primary" role="button">
+                <a href="/meals/add" class="btn btn-info" role="button">
                 <i class="fas fa-plus-circle"></i> Add a Meal
             </a>
             <% } %>
-            <table class="table table-bordered table-striped table-hover">
+            <!--changing table colour-->
+            <table class="table table-bordered table-striped table-hover table-info">
             <% if(typeof displayName =='string' && displayName) { %>
                 <!--header row-->
                 <tr class="d-flex">
@@ -34,12 +35,12 @@
                         <td class="col-4"><%= MealList[count].notes %></td>
                         <td class="text-center col-1">
                         <a href="/meals/edit/<%= MealList[count]._id%>"
-                            class="btn btn-primary btn-sm">
+                            class="btn btn-info btn-sm">
                             <i class="fas fa-pencil-alt"></i> Edit
                         </a></td>
                         <td class="text-center col-1">
                         <a href="/meals/delete/<%= MealList[count]._id%>"
-                            class="btn btn-danger btn-sm">
+                            class="btn btn-info btn-sm">
                             <i class="fas fa-trash-alt"></i>Delete</a></td>
                     </tr>
                 <% } %>
